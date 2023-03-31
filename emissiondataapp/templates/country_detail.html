@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>{{ country.name }}</h1>
+    <a href="javascript:history.go(-1)" class="btn btn-primary">Back</a>
+  </div>
+  
+
+  
+  {% if emissions %}
+    <div class="table-responsive">
+      
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Total Emissions</th>
+            <th>Coal Emissions</th>
+            <th>Oil Emissions</th>
+            <th>Gas Fuel Emissions</th>
+            <th>Cement Emissions</th>
+            <th>Gas Flaring Emissions</th>
+            <th>Other Emissions</th>
+            <th>Per Capita Emissions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for emission in emissions %}
+            <tr>
+              <td>{{ emission.year }}</td>
+              <td>{{ emission.total_emissions }}</td>
+              <td>{{ emission.coal }}</td>
+              <td>{{ emission.oil }}</td>
+              <td>{{ emission.gas_fuel_emissions }}</td>
+              <td>{{ emission.cement }}</td>
+              <td>{{ emission.flaring }}</td>
+              <td>{{ emission.other }}</td>
+              <td>{{ emission.per_capita }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p>No emissions data available for this country.</p>
+  {% endif %}
+
+{% endblock %}
