@@ -1,0 +1,1 @@
+web: gunicorn emissiondataapp.wsgi:application --log-file -
