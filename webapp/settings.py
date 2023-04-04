@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-q#7ta)o-gg-me&e0xpwj5icw8+)ja8k5znzx#qhs!^1wt#h9sc
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://emission.onrender.com'
+    'emission.onrender.com'
 ]
 
 
